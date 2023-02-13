@@ -38,7 +38,19 @@ body {
 }
 
 .point:hover {
-    fill:deeppink
+    fill:deeppink;
+}
+
+.borderPoint {
+    fill:hotpink;
+    stroke-width: 2px;
+    stroke: black;
+}
+
+.borderPoint:hover {
+    fill:deeppink;
+    stroke-width: 2px;
+    stroke: black;
 }
 
 .axis {

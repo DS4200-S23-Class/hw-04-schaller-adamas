@@ -43,13 +43,13 @@ body {
 
 .borderPoint {
     fill:hotpink;
-    stroke-width: 2px;
+    stroke-width: 5px;
     stroke: black;
 }
 
 .borderPoint:hover {
     fill:deeppink;
-    stroke-width: 2px;
+    stroke-width: 5px;
     stroke: black;
 }
 

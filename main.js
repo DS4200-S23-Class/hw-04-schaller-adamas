@@ -27,6 +27,9 @@ function addPoint(x, y) {
     
     // adding newPoint to the svg
     document.querySelector("svg").appendChild(newPoint);
+
+    // after adding a new point it adds event listener to it
+    setup_border()
 }
 
 // Add event handler to button 
@@ -35,16 +38,30 @@ document.getElementById("subButton").addEventListener('click', submitClicked);
 
 function toggleBorder() {
 
-    // selectedPoint = pts[i];
+    // toggles the border on an off for each time it is clicked 
+    this.classList.toggle('borderPoint');
 
-    //selectedPoint.classList.toggle('borderPoint');
+    // get the coordinantes of the point from the attributes
+    let x_coord = (this.getAttribute("cx") - 100) / 30;
+    let y_coord = (350 - this.getAttribute("cy")) / 30; 
+
+    // generate the text for display
+    let text = "The coordinates of the last clicked point are (" + x_coord + "," + y_coord + ")";
+
+    // add text to the coords div on the right
+    document.getElementById('coords').innerHTML = text;
 }
 
+
+function setup_border() {
+    
 //  Add event handler to points  
-let pts = document.getElementsByClassName('point');
+    let pts = document.getElementsByClassName("point");
 
-for(i = 0; i < pts.length; i++) {
-    pts[i].addEventListener('click', toggleBorder(), capture= True)};
+    for(i = 0; i < pts.length; i++) {
+        pts[i].addEventListener("click", toggleBorder)}; 
 
-// document.getElementsByTagName("circle").addEventListener('click', toggleBorder);
+}
 
+// Set up the event listeners intially 
+setup_border()
